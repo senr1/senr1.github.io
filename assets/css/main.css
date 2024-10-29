@@ -3411,6 +3411,7 @@ input, select, textarea {
 			-ms-justify-content: center;
 			justify-content: center;
 			padding: 3.5rem 3.5rem 2rem 3.5rem ;
+			z-index: 0; /* Ensure content is behind the image */
 		}
 
 		.panel.spotlight .image {
@@ -3419,14 +3420,14 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: 0;
+			z-index: 0; /* Ensures images stay in the forefront */
 		}
 
 			.panel.spotlight .image img {
-				-moz-object-fit: cover;
-				-webkit-object-fit: cover;
-				-ms-object-fit: cover;
-				object-fit: cover;
+				-moz-object-fit: contain;
+				-webkit-object-fit: contain;
+				-ms-object-fit: contain;
+				object-fit: contain;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -3442,9 +3443,11 @@ input, select, textarea {
 			justify-content: flex-start;
 		}
 
-			.panel.spotlight.left .content {
-				background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.175) 50%);
-			}
+		.panel.spotlight.left .content {
+		    background: linear-gradient(-90deg, rgba(114, 97, 147, 0.25) 0%, rgba(114, 97, 147, 0.25) 30%, rgba(114, 97, 147, 0.2) 50%),
+		                rgba(114, 97, 147, 0.9); /* Adds a gradient with a semi-transparent purple background */
+		}
+
 
 		.panel.spotlight.right {
 			-moz-justify-content: -moz-flex-end;
