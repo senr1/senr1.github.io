@@ -3495,8 +3495,38 @@ input, select, textarea {
 		    display: block; /* Use block to ensure the panel takes up the full width */
 		    position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
 		    width: auto; /* Full width of the parent container */
-				height: 76vh;
+				height: 74vh;
 		    overflow: hidden; /* Prevents any spillover from the content */
+		}
+
+
+		.panel.spotlight .image img {
+		-moz-object-fit: contain;
+		-webkit-object-fit: contain;
+		-ms-object-fit: contain;
+		object-fit: contain;
+		}
+
+		.panel.spotlight .content {
+			display: flex;
+			-moz-flex-direction: column; /*important*/
+			-webkit-flex-direction: column; /*important*/
+			-ms-flex-direction: column; /*important*/
+			flex-direction: column; /*important*/
+			height: auto;
+		}
+
+	}
+
+
+	@media screen and (max-width: 410px) {
+
+		.panel.spotlight {
+				display: block; /* Use block to ensure the panel takes up the full width */
+				position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
+				width: auto; /* Full width of the parent container */
+				height: 32vh;
+				overflow: hidden; /* Prevents any spillover from the content */
 		}
 
 
