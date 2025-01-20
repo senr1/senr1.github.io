@@ -3429,7 +3429,7 @@ input, select, textarea {
 				-ms-object-fit: cover;
 				object-fit: cover;
 				display: block;
-				position: absolute;
+				position: relative;
 				top: 0;
 				left: 0;
 				width: 100%;
@@ -3465,7 +3465,8 @@ input, select, textarea {
 		.panel.spotlight {
 		    display: block; /* Use block to ensure the panel takes up the full width */
 		    position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
-		    width: 100%; /* Full width of the parent container */
+		    width: auto; /* Full width of the parent container */
+				height: 87vh;
 		    overflow: hidden; /* Prevents any spillover from the content */
 		}
 
@@ -3478,12 +3479,41 @@ input, select, textarea {
 		}
 
 		.panel.spotlight .content {
-			-moz-flex-direction: column !important;
-			-webkit-flex-direction: column !important;
-			-ms-flex-direction: column !important;
-			flex-direction: column !important;
-			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0.175)) !important;
-			min-height: 20.85rem;
+			display: flex;
+			-moz-flex-direction: column; /*important*/
+			-webkit-flex-direction: column; /*important*/
+			-ms-flex-direction: column; /*important*/
+			flex-direction: column; /*important*/
+			height: auto;
+		}
+
+	}
+
+	@media screen and (max-width: 640px) {
+
+		.panel.spotlight {
+		    display: block; /* Use block to ensure the panel takes up the full width */
+		    position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
+		    width: auto; /* Full width of the parent container */
+				height: 76vh;
+		    overflow: hidden; /* Prevents any spillover from the content */
+		}
+
+
+		.panel.spotlight .image img {
+		-moz-object-fit: contain;
+		-webkit-object-fit: contain;
+		-ms-object-fit: contain;
+		object-fit: contain;
+		}
+
+		.panel.spotlight .content {
+			display: flex;
+			-moz-flex-direction: column; /*important*/
+			-webkit-flex-direction: column; /*important*/
+			-ms-flex-direction: column; /*important*/
+			flex-direction: column; /*important*/
+			height: auto;
 		}
 
 	}
