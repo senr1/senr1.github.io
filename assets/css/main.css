@@ -3411,7 +3411,6 @@ input, select, textarea {
 			-ms-justify-content: center;
 			justify-content: center;
 			padding: 3.5rem 3.5rem 2rem 3.5rem ;
-			z-index: 0; /* Ensure content is behind the image */
 		}
 
 		.panel.spotlight .image {
@@ -3420,7 +3419,7 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			z-index: 0; /* Ensures images stay in the forefront */
+			z-index: 0;
 		}
 
 			.panel.spotlight .image img {
@@ -3429,7 +3428,7 @@ input, select, textarea {
 				-ms-object-fit: cover;
 				object-fit: cover;
 				display: block;
-				position: relative;
+				position: absolute;
 				top: 0;
 				left: 0;
 				width: 100%;
@@ -3443,11 +3442,9 @@ input, select, textarea {
 			justify-content: flex-start;
 		}
 
-		.panel.spotlight.left .content {
-		    background: linear-gradient(-90deg, rgba(114, 97, 147, 0.25) 0%, rgba(114, 97, 147, 0.25) 30%, rgba(114, 97, 147, 0.2) 50%),
-		                rgba(114, 97, 147, 0.9); /* Adds a gradient with a semi-transparent purple background */
-		}
-
+			.panel.spotlight.left .content {
+				background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.125) 30%, rgba(0, 0, 0, 0.175) 50%);
+			}
 
 		.panel.spotlight.right {
 			-moz-justify-content: -moz-flex-end;
@@ -3462,88 +3459,14 @@ input, select, textarea {
 
 	@media screen and (max-width: 736px) {
 
-		.panel.spotlight {
-		    display: block; /* Use block to ensure the panel takes up the full width */
-		    position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
-		    width: auto; /* Full width of the parent container */
-				height: 87vh;
-		    overflow: hidden; /* Prevents any spillover from the content */
-		}
-
-
-		.panel.spotlight .image img {
-		-moz-object-fit: contain;
-		-webkit-object-fit: contain;
-		-ms-object-fit: contain;
-		object-fit: contain;
-		}
-
 		.panel.spotlight .content {
-			display: flex;
-			-moz-flex-direction: column; /*important*/
-			-webkit-flex-direction: column; /*important*/
-			-ms-flex-direction: column; /*important*/
-			flex-direction: column; /*important*/
-			height: auto;
-		}
-
-	}
-
-	@media screen and (max-width: 640px) {
-
-		.panel.spotlight {
-		    display: block; /* Use block to ensure the panel takes up the full width */
-		    position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
-		    width: auto; /* Full width of the parent container */
-				height: 74vh;
-		    overflow: hidden; /* Prevents any spillover from the content */
-		}
-
-
-		.panel.spotlight .image img {
-		-moz-object-fit: contain;
-		-webkit-object-fit: contain;
-		-ms-object-fit: contain;
-		object-fit: contain;
-		}
-
-		.panel.spotlight .content {
-			display: flex;
-			-moz-flex-direction: column; /*important*/
-			-webkit-flex-direction: column; /*important*/
-			-ms-flex-direction: column; /*important*/
-			flex-direction: column; /*important*/
-			height: auto;
-		}
-
-	}
-
-
-	@media screen and (max-width: 410px) {
-
-		.panel.spotlight {
-				display: block; /* Use block to ensure the panel takes up the full width */
-				position: relative; /* Position relative so that the absolutely positioned image can be based on this container */
-				width: auto; /* Full width of the parent container */
-				height: 32vh;
-				overflow: hidden; /* Prevents any spillover from the content */
-		}
-
-
-		.panel.spotlight .image img {
-		-moz-object-fit: contain;
-		-webkit-object-fit: contain;
-		-ms-object-fit: contain;
-		object-fit: contain;
-		}
-
-		.panel.spotlight .content {
-			display: flex;
-			-moz-flex-direction: column; /*important*/
-			-webkit-flex-direction: column; /*important*/
-			-ms-flex-direction: column; /*important*/
-			flex-direction: column; /*important*/
-			height: auto;
+			padding: 2.8875rem 1.75rem 1.3875rem 1.75rem ;
+			-moz-flex-direction: column !important;
+			-webkit-flex-direction: column !important;
+			-ms-flex-direction: column !important;
+			flex-direction: column !important;
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 70%, rgba(0, 0, 0, 0.175)) !important;
+			min-height: 25rem;
 		}
 
 	}
